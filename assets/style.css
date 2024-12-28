@@ -7,10 +7,13 @@ body{
 }
 
 #cursor{
-    position: absolute;
-    width: 10px;
-    height: 10px;
+    position: fixed;
+    width: 11.5px;
+    height: 11.5px;
     background-color: rgb(0,116,255);
+    pointer-events: none;
+    z-index: 1000;
+
 }
 
 #divide-line-1{
@@ -42,8 +45,8 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
+    width: 11.5px;
+    height: 11.5px;
     background-color: rgb(0,116,255);
 }
 
@@ -52,6 +55,7 @@ body{
     /* background-color: rgb(36, 36, 36); */
     width: 50%;
     height: 50%;
+    overflow: scroll;
 }
 
 #about-title{
@@ -94,4 +98,154 @@ body{
     box-sizing: border-box;
     padding: 20px;
     font-size: 16px;
+}
+
+
+.work{
+    position: absolute;
+    /* background-color: rgb(36, 36, 36); */
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    font-family: sans-serif;
+    font-weight: 300;
+    color: rgb(0,116,255);
+    /* box-sizing: border-box;
+    padding: 20px; */
+    overflow: scroll;
+    font-size: 16px;
+}
+
+.work > div {
+    border-bottom: 1px solid rgb(0,116,255);
+  }
+
+  .work > div:hover {
+    background-color: rgb(0, 116, 255);
+    color: black;
+}
+
+#list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    position: sticky;
+    background-color: black;
+    top: 0;
+}
+
+/* #s-dec{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    align-content: center;
+    margin-top: -15px;
+}
+
+#s1{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0,116,255);
+}
+
+
+#s2{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0,116,255);
+} */
+
+#the-wishlist{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#cd-player{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#sound-projection{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#the-face{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#the-face span:first-of-type {
+    font-size: 14px;
+}
+
+#spreadsheet{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+/* #spreadsheet span:first-of-type {
+    box-sizing: border-box;
+    padding-top: 2px;
+    padding-left: 5px;
+    font-size: 13px;
+} */
+
+#star-introduction{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#twofivesix-images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#laika{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#jovial{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#sunset-sunrise{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#flipping{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#dance-club{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#wishes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+#litter-trace{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
 }
