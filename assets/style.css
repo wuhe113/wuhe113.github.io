@@ -98,6 +98,7 @@ body{
     box-sizing: border-box;
     padding: 20px;
     font-size: 16px;
+    line-height: 20px;
 }
 
 
@@ -115,10 +116,13 @@ body{
     padding: 20px; */
     overflow: scroll;
     font-size: 16px;
+    /* line-height: 20px; */
 }
 
 .work > div {
     border-bottom: 1px solid rgb(0,116,255);
+    box-sizing: border-box;
+    padding-left: 5px;
   }
 
   .work > div:hover {
