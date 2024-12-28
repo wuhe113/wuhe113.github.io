@@ -3,9 +3,11 @@ body{
     overflow: hidden;
     padding: 0;
     margin: 0;
+    cursor: none;
 }
 
 #cursor{
+    position: absolute;
     width: 10px;
     height: 10px;
     background-color: rgb(0,116,255);
@@ -13,11 +15,11 @@ body{
 
 #divide-line-1{
     position: relative;
-    margin: auto;
+    /* margin: auto;
+    top: 50%; */
+    left: 50%;
     top: 50%;
-    /* left: -50%;
-    top: -50%;
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     background-color: rgb(0,116,255);
     width: 100vw;
     height: 1px;
@@ -26,15 +28,27 @@ body{
 #divide-line-2{
     position: absolute;
     left: 50%;
-    margin-top: -5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* left: 50%;
+    margin-top: -5px; */
     background-color: rgb(0,116,255);
     width: 1px;
     height: 105vh;
 }
 
+#center-square{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0,116,255);
+}
+
 #about{
     position: relative;
-    margin-top: -2px;
     /* background-color: rgb(36, 36, 36); */
     width: 50%;
     height: 50%;
@@ -69,4 +83,15 @@ body{
     left: -28px;
     top: -4px;
 
+}
+
+#introduction{
+    font-family: sans-serif;
+    font-weight: 300;
+    color: rgb(0,116,255);
+    word-break: break-word;
+    /* line-break: auto; */
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 16px;
 }
