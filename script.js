@@ -8,26 +8,61 @@ document.onmousemove = function(e){
 const works = document.getElementById('work');
 const worksDescription = document.getElementById('description');
 
+const image = document.getElementById('works-image');
+
 works.onclick = function (e) {
     if (e.target && (e.target.tagName === 'DIV' || e.target.tagName === 'SPAN')) {
         let clickedElement = e.target.closest('div');
 
         let content = clickedElement.id;
 
-        video.innerHTML = '';
+        // if (video) {
+        //     video.innerHTML = '';
+        //     video.pause();
+        // }
 
 
-        let newVideo = document.createElement('source');
-        video.appendChild(newVideo);
+        // let newVideo = document.createElement('source');
+        // video.appendChild(newVideo);
 
 
-        worksDescription.innerHTML = '';
+        // worksDescription.innerHTML = '';
+
+        if (content === 'the-wishlist') {
+            if (video) {
+                video.innerHTML = '';
+                video.style.display = 'none';
+            }
+
+            if(image){
+                image.style.display = 'none';
+            }
+
+            worksDescription.innerHTML = 
+            `<div>
+            ■The Wishlist is a simulated e-commerce platform powered by Firebase.
+            <br>
+            <br>■It utilizes Realtime Database to store and retrieve data, embodying users' wishlist items and be publicly displayed on the webpage. This platform allows individuals to save their wishlist items while also exploring the wishlist items of others, creating a space designed for sharing.
+            <br>
+            <br><div id="visit"><a href="https://helen-wu.online/2024-sites/the-wishlist/">■Link to website↗︎</a></div>
+        </div>`;
+        }
 
 
 
         if (content === 'cd-player') {
-            newVideo.setAttribute('src', 'assets/videos/CD Player/CD Player video3.mp4');
-            video.load();
+            if (video) {
+                video.innerHTML = '';
+                let newVideo = document.createElement('source');
+                newVideo.setAttribute('src', 'assets/videos/CD Player/CD Player video3.mp4');
+                video.appendChild(newVideo);
+                video.load();
+                video.style.display = 'block';
+            }
+
+            if(image){
+                image.style.display = 'none';
+            }
 
             worksDescription.innerHTML = 
             `<div>
@@ -40,8 +75,44 @@ works.onclick = function (e) {
         }
 
         if (content === 'sound-projection') {
-            newVideo.setAttribute('src', 'assets/videos/Sound Interaction/Sound Interaction.mp4');
-            video.load();
+            if (video) {
+                video.innerHTML = '';
+                let newVideo = document.createElement('source');
+                newVideo.setAttribute('src', 'assets/videos/Sound Interaction/Sound Interaction.mp4');
+                video.appendChild(newVideo);
+                video.load();
+                video.style.display = 'block';
+            }
+
+            if(image){
+                image.style.display = 'none';
+            }
+
+
+        }
+
+        if (content === 'spreadsheet') {
+            if (video) {
+                video.innerHTML = '';
+                video.style.display = 'none';
+            }
+
+            if(image){
+                image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
+                image.style.display = 'block';
+            }
+
+            worksDescription.innerHTML = 
+            `<div>
+            ■ON SPREADSHEET, ART, DESIGN is an open online archive on spreadsheet, dedicated to new media art uniquely mediated  through spreadsheets. 
+            <br>
+            <br>■This archive will showcase the power of spreadsheets not merely as organizational or calculation tools but as an innovative and unexpected medium for artistic creation. 
+            <br>
+            <br>■Based on this, this archive will also explore the relationship between spreadsheets and the development of net art and new media art. It reflects on related questions, such as - what does the transformation of spreadsheets from accounting tool to art medium reveal? why do designers or artists choose to use this tool?
+            <br>
+            <br>■This is an ongoing project
+            <br><div id="visit"><a href="https://docs.google.com/spreadsheets/d/163V3ZQcCfLt4502UdJ1pVUUQFgBnExE63K3QKJHOy6w/edit?usp=sharing">■Link to spreadsheet↗︎</a></div>
+        </div>`;
 
         }
     }
