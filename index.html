@@ -1,6 +1,7 @@
 <html lang="en">
     <head>
         <title>Helen Wu</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
         <link rel="stylesheet" href="assets/reset.css">
         <link rel="stylesheet" href="assets/style.css">
 
@@ -24,11 +25,13 @@
         <div id="introduction">
             ■Helen Wu was born in 2003 in China. She is a graphic designer and currently studying Communication Design at Parsons School of Design in New York.
             <br>
-            <br>■In her projects, she is dedicated to exploring unconventional and engaging design approaches. Beyond that, she is passionate about experimenting with diverse design mediums, particularly digital ones, such as web programming, motion graphics, and projection mapping.
+            <br>■In her projects, she is dedicated to exploring unconventional and engaging design approaches. Beyond that, she is passionate about experimenting with diverse design mediums. Her works primarily focus on Web Design / Creative Coding / Book Design / Editorial Design / Motion graphics / Installations / Photography / Projection Mapping
+            <!-- <br>■ Primarily focus on Web Design / Creative Coding / Book Design / Editorial Design / Motion graphics / Photography / Projection Mapping -->
+            <!-- <br>■In her projects, she is dedicated to exploring unconventional and engaging design approaches. Beyond that, she is passionate about experimenting with diverse design mediums, particularly digital ones, such as web programming, motion graphics, and projection mapping. -->
             <br>
             <br>
-            ■<div id="spotify-player">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5aw0gMVbnsBlaAOp6ZCDgq?utm_source=generator&theme=0" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div id="spotify-player">
+                ■<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5aw0gMVbnsBlaAOp6ZCDgq?utm_source=generator&theme=0" width="80%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
 
@@ -93,7 +96,22 @@
 
     <div id="description"></div>
 
-    <div id="images"></div>
+    <div id="images-videos">
+        <div id="video-controls" class="controls" data-state="hidden">
+            <button id="play-pause" type="button" data-state="play">▶</button>
+            <button id="stop" type="button" data-state="stop">■</button>
+            <!-- <div class="progress">
+              <progress id="progress" value="0" min="0">
+                <span id="progress-bar"></span>
+              </progress>
+            </div> -->
+            <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+          </div>
+
+        <video id="works-video">
+            <source src="assets/videos/CD Player/CD Player video3.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <div id="cursor"></div>
 
