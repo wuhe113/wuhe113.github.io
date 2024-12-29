@@ -110,7 +110,7 @@ works.onclick = function (e) {
             <br>
             <br>■Based on this, this archive will also explore the relationship between spreadsheets and the development of net art and new media art. It reflects on related questions, such as - what does the transformation of spreadsheets from accounting tool to art medium reveal? why do designers or artists choose to use this tool?
             <br>
-            <br>■This is an ongoing project
+            <br>■This is an ongoing project.
             <br><div id="visit"><a href="https://docs.google.com/spreadsheets/d/163V3ZQcCfLt4502UdJ1pVUUQFgBnExE63K3QKJHOy6w/edit?usp=sharing">■Link to spreadsheet↗︎</a></div>
         </div>`;
 
