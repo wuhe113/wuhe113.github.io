@@ -115,6 +115,36 @@ body{
     display: flex;
 }
 
+a{
+    cursor: none;
+}
+
+#contact{
+    position: absolute;
+    display: flex;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgb(0,116,255);
+    left: 20px;
+    bottom: 5px;
+}
+
+#contact span:nth-of-type(2) {
+    padding-left: 20px;
+
+}
+
+#contact span:nth-of-type(3) {
+    padding-left: 20px;
+
+}
+
+#txt:hover{
+    color: black;
+}
+
+
 
 .work{
     position: absolute;
