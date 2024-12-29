@@ -90,6 +90,7 @@ body{
 }
 
 #introduction{
+    position: absolute;
     font-family: sans-serif;
     font-weight: 300;
     color: rgb(0,116,255);
@@ -100,6 +101,13 @@ body{
     font-size: 16px;
     line-height: 20px;
 }
+
+/* #spotify-player{
+    position: absolute;
+    right: 30px;
+    bottom: 0px;
+
+} */
 
 
 .work{
