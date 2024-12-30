@@ -5,6 +5,18 @@ document.onmousemove = function(e){
     cursor.style.top = e.clientY + "px";
 }
 
+// const shootingStars = document.getElementById("about");
+
+//     for (let i = 0; i < 10; i++){
+
+//         let stars = document.createElement('div');
+//         stars.setAttribute('class', 'star');
+//         stars.innerHTML= `<span></span>`;
+
+//         shootingStars.appendChild(stars);
+//     }
+
+
 const works = document.getElementById('work');
 const worksDescription = document.getElementById('description');
 
