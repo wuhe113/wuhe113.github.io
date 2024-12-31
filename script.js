@@ -17,12 +17,29 @@ document.onmousemove = function(e){
 //     }
 
 
-const works = document.getElementById('work');
-const worksDescription = document.getElementById('description');
+const works = document.getElementById("work");
+const worksDescription = document.getElementById("description");
 
-const image = document.getElementById('works-image');
+const image = document.getElementById("works-image");
 
-const loader = document.getElementById('loader');
+const loader = document.getElementById("loader");
+
+const dots = document.getElementById("dots");
+
+let dotCount = 0;
+let typingInterval;
+
+const startTypingAnimation = () => {
+    typingInterval = setInterval(() => {
+    dotCount = (dotCount + 1) % 4;
+    dots.textContent = '.'.repeat(dotCount);
+    }, 500);
+}
+
+const stopTypingAnimation = () => {
+    clearInterval(typingInterval);
+    dots.textContent = '';
+};
 
 
 works.onclick = function (e) {
@@ -123,8 +140,11 @@ works.onclick = function (e) {
             image.style.display = "none";
             image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
 
+            startTypingAnimation();
+
             // Handle image loading
             image.onload = () => {
+                stopTypingAnimation(); 
                 loader.style.display = "none";
                 image.style.display = "block";
             };
