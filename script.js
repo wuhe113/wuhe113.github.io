@@ -26,21 +26,15 @@ const loader = document.getElementById('loader');
 
 
 works.onclick = function (e) {
-
-    document.addEventListener("DOMContentLoaded", () =>{
-
-        image.onload = () => {
-            loader.style.display = "none";
-            image.style.display = "block";
-        };
-    
-        
-    });
-    
     if (e.target && (e.target.tagName === 'DIV' || e.target.tagName === 'SPAN')) {
         let clickedElement = e.target.closest('div');
 
         let content = clickedElement.id;
+
+        loader.style.display = "none";
+        if (image) {
+            image.style.display = "none";
+        }
 
         // if (video) {
         //     video.innerHTML = '';
@@ -59,6 +53,8 @@ works.onclick = function (e) {
                 video.innerHTML = '';
                 video.style.display = 'none';
             }
+
+            loader.style.display = "none";
 
             if(image){
                 image.style.display = 'none';
@@ -123,10 +119,25 @@ works.onclick = function (e) {
                 video.style.display = 'none';
             }
 
-            if(image){
-                image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
-                image.style.display = 'block';
-            }
+            loader.style.display = "block";
+            image.style.display = "none";
+            image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
+
+            // Handle image loading
+            image.onload = () => {
+                loader.style.display = "none";
+                image.style.display = "block";
+            };
+
+            image.onerror = () => {
+                loader.style.display = "none";
+                alert("Failed to load image.");
+            };
+
+            // if(image){
+            //     image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
+            //     image.style.display = 'block';
+            // }
 
             worksDescription.innerHTML = 
             `<div>
