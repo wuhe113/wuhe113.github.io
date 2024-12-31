@@ -22,7 +22,21 @@ const worksDescription = document.getElementById('description');
 
 const image = document.getElementById('works-image');
 
+const loader = document.getElementById('loader');
+
+
 works.onclick = function (e) {
+
+    document.addEventListener("DOMContentLoaded", () =>{
+
+        image.onload = () => {
+            loader.style.display = "none";
+            image.style.display = "block";
+        };
+    
+        
+    });
+    
     if (e.target && (e.target.tagName === 'DIV' || e.target.tagName === 'SPAN')) {
         let clickedElement = e.target.closest('div');
 

@@ -505,3 +505,11 @@ button{
     bottom: 20px;
 
 }
+
+#loader{
+    display: none;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgb(0,116,255);
+}
