@@ -29,11 +29,15 @@ const dots = document.getElementById("dots");
 let dotCount = 0;
 let typingInterval;
 
+const next = document.getElementById("nextButton");
+const prev = document.getElementById("prevButton");
+const enlarge = document.getElementById("enlargeButton");
+
 const startTypingAnimation = () => {
     typingInterval = setInterval(() => {
     dotCount = (dotCount + 1) % 4;
     dots.textContent = '.'.repeat(dotCount);
-    }, 500);
+    }, 300);
 }
 
 const stopTypingAnimation = () => {
@@ -41,6 +45,72 @@ const stopTypingAnimation = () => {
     dots.textContent = '';
 };
 
+let isEnlarged = false;
+
+enlarge.onclick = function(e) {
+    event.stopPropagation(); // Prevent the click on the enlarge button from propagating to the document
+    if (isEnlarged) {
+        resetImageStyle();
+    } else {
+        enlargeImage();
+    }
+    isEnlarged = !isEnlarged;
+};
+
+const enlargeImage = () => {
+    image.style.transform = "translate(-50%, -50%) scale(0.9)";
+    image.style.position = "fixed";
+    image.style.left = "50%";
+    image.style.top = "50%";
+    image.style.zIndex = "100";
+};
+
+const resetImageStyle = () => {
+    image.style.transform = "";
+    image.style.position = "";
+    image.style.left = "";
+    image.style.top = "";
+    image.style.zIndex = "";
+    isEnlarged = false;
+};
+
+document.onclick = function (e) {
+    if (isEnlarged && !image.contains(event.target)) {
+        resetImageStyle();
+    }
+};
+
+
+// const updateButtonVisibility = () => {
+//     const imageLoaded = image && image.getAttribute('src') && image.getAttribute('src').trim() !== '';
+
+//     if (imageLoaded) {
+//         prev.style.display = "block";
+//         next.style.display = "block";
+//         enlarge.style.display = "block";
+//     } else {
+//         prev.style.display = "none";
+//         next.style.display = "none";
+//         enlarge.style.display = "none";
+//     }
+// };
+
+
+const updateButtonVisibility = () => {
+    const isImageVisible = image.style.display !== "none";
+    prev.style.display = isImageVisible ? "block" : "none";
+    next.style.display = isImageVisible ? "block" : "none";
+    enlarge.style.display = isImageVisible ? "block" : "none";
+};
+
+// const toggleImageVisibility = () => {
+//     if (image.style.display === "none") {
+//         image.style.display = "block"; // Show the image
+//     } else {
+//         image.style.display = "none"; // Hide the image
+//     }
+//     updateButtonVisibility(); // Update button visibility
+// };
 
 works.onclick = function (e) {
     if (e.target && (e.target.tagName === 'DIV' || e.target.tagName === 'SPAN')) {
@@ -49,9 +119,15 @@ works.onclick = function (e) {
         let content = clickedElement.id;
 
         loader.style.display = "none";
+
+        if (video) {
+            video.style.display = "none";
+        };
+
         if (image) {
             image.style.display = "none";
-        }
+        };
+
 
         // if (video) {
         //     video.innerHTML = '';
@@ -71,7 +147,6 @@ works.onclick = function (e) {
                 video.style.display = 'none';
             }
 
-            loader.style.display = "none";
 
             if(image){
                 image.style.display = 'none';
@@ -93,11 +168,29 @@ works.onclick = function (e) {
             if (video) {
                 video.innerHTML = '';
                 let newVideo = document.createElement('source');
+
+                loader.style.display = "block";
+                video.style.display = "none";
+
+                startTypingAnimation();
+
                 newVideo.setAttribute('src', 'assets/videos/CD Player/CD Player video3.mp4');
                 video.appendChild(newVideo);
                 video.load();
-                video.style.display = 'block';
+                // video.style.display = 'block';
             }
+
+            video.addEventListener('loadeddata', () => {
+                stopTypingAnimation(); 
+                loader.style.display = "none";
+                video.style.display = "block";
+                updateButtonVisibility();
+            });
+
+            video.onerror = () => {
+                loader.style.display = "none";
+                alert("Failed to load video.");
+            };
 
             if(image){
                 image.style.display = 'none';
@@ -117,15 +210,39 @@ works.onclick = function (e) {
             if (video) {
                 video.innerHTML = '';
                 let newVideo = document.createElement('source');
+
+                loader.style.display = "block";
+                video.style.display = "none";
+
+                startTypingAnimation();
+
                 newVideo.setAttribute('src', 'assets/videos/Sound Interaction/Sound Interaction.mp4');
                 video.appendChild(newVideo);
                 video.load();
-                video.style.display = 'block';
+                // video.style.display = 'block';
             }
+
+            video.addEventListener('loadeddata', () => {
+                stopTypingAnimation(); 
+                loader.style.display = "none";
+                video.style.display = "block";
+                updateButtonVisibility();
+            });
+
+            video.onerror = () => {
+                loader.style.display = "none";
+                alert("Failed to load video.");
+            };
 
             if(image){
                 image.style.display = 'none';
-            }
+            };
+
+            worksDescription.innerHTML = 
+            `<div>
+            ■This is a projection mapping project utilizing p5.js programming for sound visualization. The concept is an expansion on Stan VanDerBeek's 1966 Manifesto for Expanded Cinema. The goal is to capture all the sounds within a space, treating them as a cohesive whole, and visually represent the frequency of interactions between sounds.
+            <br>
+        </div>`;
 
 
         }
@@ -142,11 +259,11 @@ works.onclick = function (e) {
 
             startTypingAnimation();
 
-            // Handle image loading
             image.onload = () => {
                 stopTypingAnimation(); 
                 loader.style.display = "none";
                 image.style.display = "block";
+                updateButtonVisibility();
             };
 
             image.onerror = () => {
@@ -171,6 +288,122 @@ works.onclick = function (e) {
             <br><div id="visit"><a href="https://docs.google.com/spreadsheets/d/163V3ZQcCfLt4502UdJ1pVUUQFgBnExE63K3QKJHOy6w/edit?usp=sharing">■Link to spreadsheet↗︎</a></div>
         </div>`;
 
+        }
+
+        if (content === 'self-introduction') {
+            if (video) {
+                video.innerHTML = '';
+                let newVideo = document.createElement('source');
+
+                loader.style.display = "block";
+                video.style.display = "none";
+
+                startTypingAnimation();
+
+                newVideo.setAttribute('src', 'assets/videos/Self-Introduction/Self-Introduction.mp4');
+                video.appendChild(newVideo);
+                video.load();
+
+                // video.style.display = 'block';
+            }
+
+            video.addEventListener('loadeddata', () => {
+                stopTypingAnimation(); 
+                loader.style.display = "none";
+                video.style.display = "block";
+                updateButtonVisibility();
+            });
+
+            video.onerror = () => {
+                loader.style.display = "none";
+                alert("Failed to load video.");
+            };
+
+            if(image){
+                image.style.display = 'none';
+            };
+
+            worksDescription.innerHTML = 
+            `<div>
+            <div id="visit"><a href="https://helen-wu.online/2024-sites/project_1/">■Link to website↗︎</a></div>
+            <br>
+        </div>`;
+
+
+        }
+
+        if (content === 'twofivesix-images') {
+            if (video) {
+                video.innerHTML = '';
+                video.style.display = 'none';
+            }
+        
+            loader.style.display = "block";
+            image.style.display = "none";
+
+            enlarge.style.display = "block";
+        
+
+            const images = [
+                'assets/images/256 Images/image1.jpg',
+                'assets/images/256 Images/image2.jpg',
+                'assets/images/256 Images/image3.jpg',
+                'assets/images/256 Images/image4.jpg',
+                'assets/images/256 Images/image5.jpg',
+            ];
+        
+
+            let currentIndex = 0;
+        
+
+            const loadImage = (index) => {
+                if (index < 0 || index >= images.length) {
+                    // alert("Invalid image index");
+                    loader.style.display = "none";
+                    return;
+                }
+        
+                image.setAttribute('src', images[index]);
+        
+                startTypingAnimation();
+        
+                image.onload = () => {
+                    stopTypingAnimation();
+                    loader.style.display = "none";
+                    image.style.display = "block";
+                    updateButtonVisibility();
+                };
+        
+                image.onerror = () => {
+                    loader.style.display = "none";
+                    alert("Failed to load image.");
+                };
+            };
+        
+
+            loadImage(currentIndex);
+        
+
+        
+            if (next && prev) {
+        
+                next.onclick = () => {
+                    currentIndex = (currentIndex - 1) % images.length;
+                    loadImage(currentIndex);
+                };
+        
+                prev.onclick = () => {
+                    currentIndex = (currentIndex + 1 + images.length) % images.length;
+                    loadImage(currentIndex);
+                };
+            }
+        
+            worksDescription.innerHTML = 
+            `<div>
+                ■&lt;256 Images&gt; Untitled is an experimental book crafted using various materials. It categorizes 256 images into ten distinct “sensations” based on the feelings each image conveys: Static, Wild, Bloody, Blue, Flowing, Floating, Glowing, Glittering, Metallic and Fictional. These ten sensations are physically embodied in the cover of the book through corresponding materials. 
+                <br><br>
+                ■When engaging with this experimental object, readers not only perceive the sensations through the images but also physically experience them by touching the materials. This approach transforms abstract associations into tangible experiences. The content is printed on individual tabloid-sized sheets, allowing readers the freedom to rearrange the pages as they see fit, creating a personalized interaction with the material.
+            </div>`;
         }
     }
 };
@@ -222,6 +455,9 @@ fullscreenButton.onclick = function(e){
         video.msRequestFullscreen();
     }
 };
+
+
+
 
 
 
