@@ -275,7 +275,7 @@ works.onclick = function (e) {
             <br>
             <br>■All music by T-SQUARE, a Japanese jazz-fusion band.
             <br>
-            <br><div id="visit"><a href="https://helen-wu.online/2024-sites/project_4/">■Link to website↗︎</a></div>
+            <br><div id="visit"><a href="https://helen-wu.online/2024-sites/cd-player/">■Link to website↗︎</a></div>
         </div>`;
         }
 
@@ -375,9 +375,9 @@ works.onclick = function (e) {
             `<div>
             ■ON SPREADSHEET, ART, DESIGN is an open online archive on spreadsheet, dedicated to new media art uniquely mediated  through spreadsheets. 
             <br>
-            <br>■This archive will showcase the power of spreadsheets not merely as organizational or calculation tools but as an innovative and unexpected medium for artistic creation. 
+            <br>■This archive showcases the power of spreadsheets not merely as organizational or calculation tools but as an innovative and unexpected medium for artistic creation. 
             <br>
-            <br>■Based on this, this archive will also explore the relationship between spreadsheets and the development of net art and new media art. It reflects on related questions, such as - what does the transformation of spreadsheets from accounting tool to art medium reveal? why do designers or artists choose to use this tool?
+            <br>■Based on this, it also explores the relationship between spreadsheets and the development of net art and new media art. It reflects on related questions, such as - what does the transformation of spreadsheets from accounting tool to art medium reveal? why do designers or artists choose to use this tool?
             <br>
             <br>■This is an ongoing project.
             <br><div id="visit"><a href="https://docs.google.com/spreadsheets/d/163V3ZQcCfLt4502UdJ1pVUUQFgBnExE63K3QKJHOy6w/edit?usp=sharing">■Link to spreadsheet↗︎</a></div>
@@ -430,7 +430,7 @@ works.onclick = function (e) {
 
             worksDescription.innerHTML = 
             `<div>
-            <div id="visit"><a href="https://helen-wu.online/2024-sites/project_1/">■Link to website↗︎</a></div>
+            <div id="visit"><a href="https://helen-wu.online/2024-sites/introductory/">■Link to website↗︎</a></div>
             <br>
         </div>`;
 
@@ -549,6 +549,96 @@ works.onclick = function (e) {
             worksDescription.innerHTML = 
             `<div>
                 ■Laika, Space is a project that intends to utilize multiple mediums to create an immersive space connecting the audience to the story of the space dog Laika. The space presents a variety of fragmented information about this historical archive, which are like scattered jigsaw puzzles waiting to be put together by the audience who enters the space.
+            </div>`;
+        }
+
+        if (content === 'sunset-sunrise') {
+
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Sunset Sunrise/Sunset Sunrise.mp4"}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+            worksDescription.innerHTML = 
+            `<div>
+            <div id="visit"><a href="https://helen-wu.online/2024-sites/sunset-sunrise/">■Link to website↗︎</a></div>
+            <br>
+        </div>`;
+        }
+
+        if (content === 'flipping') {
+
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Flipping/Flipping.mp4"}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+            worksDescription.innerHTML = 
+            `<div>
+            <div id="visit"><a href="https://helen-wu.online/2024-sites/flipping/">■Link to website↗︎</a></div>
+            <br>
+        </div>`;
+        }
+
+        if (content === 'wishes') {
+
+            mediaData = {
+                type: 'image',
+                sources: [
+                    { type: 'image', src: 'assets/images/Wishes/wishes1.gif' },
+                    { type: 'image', src: 'assets/images/Wishes/wishes2.gif' },
+                    { type: 'image', src: 'assets/images/Wishes/wishes3.gif' },
+                    { type: 'image', src: 'assets/images/Wishes/wishes4.gif' },
+                    { type: 'image', src: 'assets/images/Wishes/wishes5.gif' },
+                    { type: 'image', src: 'assets/images/Wishes/wishes6.jpg' },
+                    { type: 'image', src: 'assets/images/Wishes/wishes7.jpg' },
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+        
+            worksDescription.innerHTML = 
+            `<div>
+                ■All Your Wishes Come True is a zine project composed of two booklets, a collection of posters, and motion graphics derived from the physical outputs. Centered around the theme of "wishes," the project explores the methodology of wish fulfillment, meanwhile, demonstrates human desire to make wishes come true across time, cultures, and methodologies. 
+                <br><br>
+                ■The two booklets delve into the methodologies of wish fulfillment, drawing connections between Freud's Interpretation of Dreams, the myth of Pygmalion, the phenomenon of chain letters spread through the internet, and witches' spells. These narratives reveal humanity's timeless fascination with manifesting desires into reality.
+                <br><br>
+                ■The poster collection highlights renowned locations worldwide that are believed to grant wishes, accompanied by their corresponding folklore or stories. By weaving together these diverse narratives, the zine serves as a curated anthology, inviting readers to immerse themselves in the magic of wish-making.
+                <br><br>
+                ■Designed with both visual and narrative appeal, All Your Wishes Come True is intentionally crafted as a bedtime storybook for all kinds of people—evoking a sense of wonder and introspection.
+            </div>`;
+        }
+
+        if (content === 'litter-trace') {
+
+            mediaData = {
+                sources: [
+                    { type: 'image', src: 'assets/images/Litter/litter1.gif' },
+                    { type: 'image', src: 'assets/images/Litter/litter2.jpg' },
+                    { type: 'image', src: 'assets/images/Litter/litter3.jpg' },
+                    { type: 'image', src: 'assets/images/Litter/litter4.gif' },
+                    { type: 'video', src: 'assets/images/Litter/litter5.mp4' },
+
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+        
+            worksDescription.innerHTML = 
+            `<div>
+                ■LITTER & TRACE is a design publication project that includes a physical book, a motion graphic animation, and a complementary website design derived from the book's content. It explores the issue of urban littering, examining its psychological and societal roots while addressing questions such as why and where people litter. The project also investigates the connections between littering, criminal behavior, and its broader impact on urban communities and individual lives.
+                <br><br>
+                ■The physical book provides a foundation of research, data visualization, and storytelling, while the motion graphics and website expand the narrative through dynamic and interactive mediums. All of the elements from the project encourage audiences to reflect on the traces we leave in our environment and the role of individual actions in shaping public spaces.
             </div>`;
         }
 
