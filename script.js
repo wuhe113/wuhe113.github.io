@@ -81,6 +81,8 @@ document.onclick = function (e) {
 };
 
 
+
+
 // const updateButtonVisibility = () => {
 //     const imageLoaded = image && image.getAttribute('src') && image.getAttribute('src').trim() !== '';
 
@@ -140,18 +142,21 @@ works.onclick = function (e) {
 
             const { type, src } = mediaData.sources[index];
             loader.style.display = "block";
+            startTypingAnimation();
 
             if (type === 'image') {
                 video.style.display = "none";
                 image.setAttribute('src', src);
 
                 image.onload = () => {
+                    stopTypingAnimation();
                     loader.style.display = "none";
                     image.style.display = "block";
                     updateButtonVisibility('image');
                 };
 
                 image.onerror = () => {
+                    stopTypingAnimation();
                     loader.style.display = "none";
                     alert("Failed to load image.");
                 };
@@ -163,12 +168,14 @@ works.onclick = function (e) {
 
                 video.load();
                 video.onloadeddata = () => {
+                    stopTypingAnimation();
                     loader.style.display = "none";
                     video.style.display = "block";
                     updateButtonVisibility('video');
                 };
 
                 video.onerror = () => {
+                    stopTypingAnimation();
                     loader.style.display = "none";
                     alert("Failed to load video.");
                 };
