@@ -122,10 +122,57 @@ works.onclick = function (e) {
 
         if (video) {
             video.style.display = "none";
+            video.innerHTML = "";
         };
 
         if (image) {
             image.style.display = "none";
+        };
+
+        let mediaData = {}; 
+        let currentIndex = 0;
+
+        const loadMedia = (index) => {
+            if (index < 0 || index >= mediaData.sources.length) {
+                loader.style.display = "none";
+                return;
+            }
+
+            const { type, src } = mediaData.sources[index];
+            loader.style.display = "block";
+
+            if (type === 'image') {
+                video.style.display = "none";
+                image.setAttribute('src', src);
+
+                image.onload = () => {
+                    loader.style.display = "none";
+                    image.style.display = "block";
+                    updateButtonVisibility('image');
+                };
+
+                image.onerror = () => {
+                    loader.style.display = "none";
+                    alert("Failed to load image.");
+                };
+            } else if (type === 'video') {
+                image.style.display = "none";
+                let newVideoSource = document.createElement('source');
+                newVideoSource.setAttribute('src', src);
+                video.appendChild(newVideoSource);
+
+                video.load();
+                video.onloadeddata = () => {
+                    loader.style.display = "none";
+                    video.style.display = "block";
+                    updateButtonVisibility('video');
+                };
+
+                video.onerror = () => {
+                    loader.style.display = "none";
+                    alert("Failed to load video.");
+                };
+            }
         };
 
 
@@ -142,15 +189,24 @@ works.onclick = function (e) {
         // worksDescription.innerHTML = '';
 
         if (content === 'the-wishlist') {
-            if (video) {
-                video.innerHTML = '';
-                video.style.display = 'none';
-            }
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: ""}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     video.style.display = 'none';
+            // }
 
 
-            if(image){
-                image.style.display = 'none';
-            }
+            // if(image){
+            //     image.style.display = 'none';
+            // }
 
             worksDescription.innerHTML = 
             `<div>
@@ -165,36 +221,46 @@ works.onclick = function (e) {
 
 
         if (content === 'cd-player') {
-            if (video) {
-                video.innerHTML = '';
-                let newVideo = document.createElement('source');
 
-                loader.style.display = "block";
-                video.style.display = "none";
-
-                startTypingAnimation();
-
-                newVideo.setAttribute('src', 'assets/videos/CD Player/CD Player video3.mp4');
-                video.appendChild(newVideo);
-                video.load();
-                // video.style.display = 'block';
-            }
-
-            video.addEventListener('loadeddata', () => {
-                stopTypingAnimation(); 
-                loader.style.display = "none";
-                video.style.display = "block";
-                updateButtonVisibility();
-            });
-
-            video.onerror = () => {
-                loader.style.display = "none";
-                alert("Failed to load video.");
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/CD Player/CD Player video3.mp4"}
+                ],
             };
 
-            if(image){
-                image.style.display = 'none';
-            }
+            loadMedia(currentIndex);
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     let newVideo = document.createElement('source');
+
+            //     loader.style.display = "block";
+            //     video.style.display = "none";
+
+            //     startTypingAnimation();
+
+            //     newVideo.setAttribute('src', 'assets/videos/CD Player/CD Player video3.mp4');
+            //     video.appendChild(newVideo);
+            //     video.load();
+            //     // video.style.display = 'block';
+            // }
+
+            // video.addEventListener('loadeddata', () => {
+            //     stopTypingAnimation(); 
+            //     loader.style.display = "none";
+            //     video.style.display = "block";
+            //     updateButtonVisibility();
+            // });
+
+            // video.onerror = () => {
+            //     loader.style.display = "none";
+            //     alert("Failed to load video.");
+            // };
+
+            // if(image){
+            //     image.style.display = 'none';
+            // }
 
             worksDescription.innerHTML = 
             `<div>
@@ -207,36 +273,46 @@ works.onclick = function (e) {
         }
 
         if (content === 'sound-projection') {
-            if (video) {
-                video.innerHTML = '';
-                let newVideo = document.createElement('source');
 
-                loader.style.display = "block";
-                video.style.display = "none";
-
-                startTypingAnimation();
-
-                newVideo.setAttribute('src', 'assets/videos/Sound Interaction/Sound Interaction.mp4');
-                video.appendChild(newVideo);
-                video.load();
-                // video.style.display = 'block';
-            }
-
-            video.addEventListener('loadeddata', () => {
-                stopTypingAnimation(); 
-                loader.style.display = "none";
-                video.style.display = "block";
-                updateButtonVisibility();
-            });
-
-            video.onerror = () => {
-                loader.style.display = "none";
-                alert("Failed to load video.");
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Sound Interaction/Sound Interaction.mp4"}
+                ],
             };
 
-            if(image){
-                image.style.display = 'none';
-            };
+            loadMedia(currentIndex);
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     let newVideo = document.createElement('source');
+
+            //     loader.style.display = "block";
+            //     video.style.display = "none";
+
+            //     startTypingAnimation();
+
+            //     newVideo.setAttribute('src', 'assets/videos/Sound Interaction/Sound Interaction.mp4');
+            //     video.appendChild(newVideo);
+            //     video.load();
+            //     // video.style.display = 'block';
+            // }
+
+            // video.addEventListener('loadeddata', () => {
+            //     stopTypingAnimation(); 
+            //     loader.style.display = "none";
+            //     video.style.display = "block";
+            //     updateButtonVisibility();
+            // });
+
+            // video.onerror = () => {
+            //     loader.style.display = "none";
+            //     alert("Failed to load video.");
+            // };
+
+            // if(image){
+            //     image.style.display = 'none';
+            // };
 
             worksDescription.innerHTML = 
             `<div>
@@ -248,28 +324,40 @@ works.onclick = function (e) {
         }
 
         if (content === 'spreadsheet') {
-            if (video) {
-                video.innerHTML = '';
-                video.style.display = 'none';
-            }
 
-            loader.style.display = "block";
-            image.style.display = "none";
-            image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
-
-            startTypingAnimation();
-
-            image.onload = () => {
-                stopTypingAnimation(); 
-                loader.style.display = "none";
-                image.style.display = "block";
-                updateButtonVisibility();
+            mediaData = {
+                type: "image",
+                sources: [
+                    { type: "image", src: "assets/images/Spreadsheet/Spreadsheet.png"}
+                ],
             };
 
-            image.onerror = () => {
-                loader.style.display = "none";
-                alert("Failed to load image.");
-            };
+            loadMedia(currentIndex);
+
+
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     video.style.display = 'none';
+            // }
+
+            // loader.style.display = "block";
+            // image.style.display = "none";
+            // image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
+
+            // startTypingAnimation();
+
+            // image.onload = () => {
+            //     stopTypingAnimation(); 
+            //     loader.style.display = "none";
+            //     image.style.display = "block";
+            //     updateButtonVisibility();
+            // };
+
+            // image.onerror = () => {
+            //     loader.style.display = "none";
+            //     alert("Failed to load image.");
+            // };
 
             // if(image){
             //     image.setAttribute('src', 'assets/images/Spreadsheet/Spreadsheet.png');
@@ -291,37 +379,47 @@ works.onclick = function (e) {
         }
 
         if (content === 'self-introduction') {
-            if (video) {
-                video.innerHTML = '';
-                let newVideo = document.createElement('source');
 
-                loader.style.display = "block";
-                video.style.display = "none";
-
-                startTypingAnimation();
-
-                newVideo.setAttribute('src', 'assets/videos/Self-Introduction/Self-Introduction.mp4');
-                video.appendChild(newVideo);
-                video.load();
-
-                // video.style.display = 'block';
-            }
-
-            video.addEventListener('loadeddata', () => {
-                stopTypingAnimation(); 
-                loader.style.display = "none";
-                video.style.display = "block";
-                updateButtonVisibility();
-            });
-
-            video.onerror = () => {
-                loader.style.display = "none";
-                alert("Failed to load video.");
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Self-Introduction/Self-Introduction.mp4"}
+                ],
             };
 
-            if(image){
-                image.style.display = 'none';
-            };
+            loadMedia(currentIndex);
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     let newVideo = document.createElement('source');
+
+            //     loader.style.display = "block";
+            //     video.style.display = "none";
+
+            //     startTypingAnimation();
+
+            //     newVideo.setAttribute('src', 'assets/videos/Self-Introduction/Self-Introduction.mp4');
+            //     video.appendChild(newVideo);
+            //     video.load();
+
+            //     // video.style.display = 'block';
+            // }
+
+            // video.addEventListener('loadeddata', () => {
+            //     stopTypingAnimation(); 
+            //     loader.style.display = "none";
+            //     video.style.display = "block";
+            //     updateButtonVisibility();
+            // });
+
+            // video.onerror = () => {
+            //     loader.style.display = "none";
+            //     alert("Failed to load video.");
+            // };
+
+            // if(image){
+            //     image.style.display = 'none';
+            // };
 
             worksDescription.innerHTML = 
             `<div>
@@ -333,70 +431,84 @@ works.onclick = function (e) {
         }
 
         if (content === 'twofivesix-images') {
-            if (video) {
-                video.innerHTML = '';
-                video.style.display = 'none';
-            }
-        
-            loader.style.display = "block";
-            image.style.display = "none";
 
-            enlarge.style.display = "block";
-        
-
-            const images = [
-                'assets/images/256 Images/image1.jpg',
-                'assets/images/256 Images/image2.jpg',
-                'assets/images/256 Images/image3.jpg',
-                'assets/images/256 Images/image4.jpg',
-                'assets/images/256 Images/image5.jpg',
-            ];
-        
-
-            let currentIndex = 0;
-        
-
-            const loadImage = (index) => {
-                if (index < 0 || index >= images.length) {
-                    // alert("Invalid image index");
-                    loader.style.display = "none";
-                    return;
-                }
-        
-                image.setAttribute('src', images[index]);
-        
-                startTypingAnimation();
-        
-                image.onload = () => {
-                    stopTypingAnimation();
-                    loader.style.display = "none";
-                    image.style.display = "block";
-                    updateButtonVisibility();
-                };
-        
-                image.onerror = () => {
-                    loader.style.display = "none";
-                    alert("Failed to load image.");
-                };
+            mediaData = {
+                type: 'image',
+                sources: [
+                    { type: 'image', src: 'assets/images/256 Images/image1.jpg' },
+                    { type: 'image', src: 'assets/images/256 Images/image2.jpg' },
+                    { type: 'image', src: 'assets/images/256 Images/image3.jpg' },
+                    { type: 'image', src: 'assets/images/256 Images/image4.jpg' },
+                    { type: 'image', src: 'assets/images/256 Images/image5.jpg' },
+                ],
             };
+
+            loadMedia(currentIndex);
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     video.style.display = 'none';
+            // }
+        
+            // loader.style.display = "block";
+            // image.style.display = "none";
+
+            // enlarge.style.display = "block";
         
 
-            loadImage(currentIndex);
+            // const images = [
+            //     'assets/images/256 Images/image1.jpg',
+            //     'assets/images/256 Images/image2.jpg',
+            //     'assets/images/256 Images/image3.jpg',
+            //     'assets/images/256 Images/image4.jpg',
+            //     'assets/images/256 Images/image5.jpg',
+            // ];
+        
+
+            // let currentIndex = 0;
+        
+
+            // const loadImage = (index) => {
+            //     if (index < 0 || index >= images.length) {
+            //         // alert("Invalid image index");
+            //         loader.style.display = "none";
+            //         return;
+            //     }
+        
+            //     image.setAttribute('src', images[index]);
+        
+            //     startTypingAnimation();
+        
+            //     image.onload = () => {
+            //         stopTypingAnimation();
+            //         loader.style.display = "none";
+            //         image.style.display = "block";
+            //         updateButtonVisibility();
+            //     };
+        
+            //     image.onerror = () => {
+            //         loader.style.display = "none";
+            //         alert("Failed to load image.");
+            //     };
+            // };
+        
+
+            // loadImage(currentIndex);
         
 
         
-            if (next && prev) {
+            // if (next && prev) {
         
-                next.onclick = () => {
-                    currentIndex = (currentIndex - 1) % images.length;
-                    loadImage(currentIndex);
-                };
+            //     next.onclick = () => {
+            //         currentIndex = (currentIndex - 1) % mediaData.sources.length;
+            //         loadMedia(currentIndex);
+            //     };
         
-                prev.onclick = () => {
-                    currentIndex = (currentIndex + 1 + images.length) % images.length;
-                    loadImage(currentIndex);
-                };
-            }
+            //     prev.onclick = () => {
+            //         currentIndex = (currentIndex + 1 + mediaData.sources.length) % mediaData.sources.length;
+            //         loadMedia(currentIndex);
+            //     };
+            // }
         
             worksDescription.innerHTML = 
             `<div>
@@ -405,6 +517,47 @@ works.onclick = function (e) {
                 ■When engaging with this experimental object, readers not only perceive the sensations through the images but also physically experience them by touching the materials. This approach transforms abstract associations into tangible experiences. The content is printed on individual tabloid-sized sheets, allowing readers the freedom to rearrange the pages as they see fit, creating a personalized interaction with the material.
             </div>`;
         }
+
+        if (content === 'laika') {
+
+            mediaData = {
+                sources: [
+                    { type: 'image', src: 'assets/images/Laika/Laika 1.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 2.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 3.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 4.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 5.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 6.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 7.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 8.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 9.jpg' },
+                    { type: 'image', src: 'assets/images/Laika/Laika 10.jpg' },
+                    { type: 'video', src: 'assets/videos/Laika/Laika video.mp4' },
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+
+            worksDescription.innerHTML = 
+            `<div>
+                ■Laika, Space is a project that intends to utilize multiple mediums to create an immersive space connecting the audience to the story of the space dog Laika. The space presents a variety of fragmented information about this historical archive, which are like scattered jigsaw puzzles waiting to be put together by the audience who enters the space.
+            </div>`;
+        }
+
+        if (next && prev) {
+        
+            next.onclick = () => {
+                currentIndex = (currentIndex - 1) % mediaData.sources.length;
+                loadMedia(currentIndex);
+            };
+    
+            prev.onclick = () => {
+                currentIndex = (currentIndex + 1 + mediaData.sources.length) % mediaData.sources.length;
+                loadMedia(currentIndex);
+            };
+        }
+
     }
 };
 
