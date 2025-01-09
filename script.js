@@ -199,7 +199,7 @@ works.onclick = function (e) {
             mediaData = {
                 type: "video",
                 sources: [
-                    { type: "video", src: ""}
+                    { type: "video", src: "assets/videos/The Wishlist/The Wishlist.mp4"}
                 ],
             };
 
@@ -584,6 +584,24 @@ works.onclick = function (e) {
             worksDescription.innerHTML = 
             `<div>
             <div id="visit"><a href="https://helen-wu.online/2024-sites/flipping/">■Link to website↗︎</a></div>
+            <br>
+        </div>`;
+        }
+
+        if (content === 'dance-club') {
+
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Flipping/Flipping.mp4"}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+            worksDescription.innerHTML = 
+            `<div>
+            <div id="visit"><a href="https://helen-wu.online/2024-sites/cyber-club/">■Link to website↗︎</a></div>
             <br>
         </div>`;
         }
