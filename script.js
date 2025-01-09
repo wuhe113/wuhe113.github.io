@@ -1,23 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-const horizontalLine = document.getElementById("line-horizontal");
-const verticalLine = document.getElementById("line-vertical");
-
-setTimeout(() => {
-    horizontalLine.style.width = "100%";
-    verticalLine.style.height = "100%";
-  }, 500);
 
 
-  setTimeout(() => {
-    document.getElementById("content").style.display = "block";
-  }, 2000);
-
-  setTimeout(() => {
-    document.getElementById("opening-loader").style.display = "none";
-  }, 2500);
-
-
-});
 
 let cursor = document.getElementById("cursor");
 
