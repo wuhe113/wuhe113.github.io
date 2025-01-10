@@ -249,8 +249,9 @@ works.onclick = function (e) {
         if (content === 'cd-player') {
 
             mediaData = {
-                type: "video",
                 sources: [
+                    { type: "image", src: "assets/images/CD Player/CD Player1.png"},
+                    { type: "image", src: "assets/images/CD Player/CD Player2.png"},
                     { type: "video", src: "assets/videos/CD Player/CD Player video3.mp4"}
                 ],
             };
