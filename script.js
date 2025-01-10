@@ -662,6 +662,7 @@ works.onclick = function (e) {
                     { type: 'image', src: 'assets/images/Litter/litter1.gif' },
                     { type: 'image', src: 'assets/images/Litter/litter2.jpg' },
                     { type: 'image', src: 'assets/images/Litter/litter3.jpg' },
+                    { type: 'image', src: 'assets/images/Litter/litter4-1.jpg' },
                     { type: 'image', src: 'assets/images/Litter/litter4.gif' },
                     { type: 'video', src: 'assets/images/Litter/litter5.mp4' },
 
