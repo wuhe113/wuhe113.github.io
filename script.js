@@ -1,4 +1,20 @@
-
+document.addEventListener("DOMContentLoaded", () => {
+    const horizontalLine = document.getElementById("line-horizontal");
+    const verticalLine = document.getElementById("line-vertical");
+  
+    // Animate the lines
+    setTimeout(() => {
+      horizontalLine.style.width = "100%";
+      verticalLine.style.height = "100%";
+    }, 500);
+  
+    // Hide the loader and show content after animation
+    setTimeout(() => {
+      document.getElementById("opening-loader").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }, 2000);
+  });
+  
 
 
 let cursor = document.getElementById("cursor");
@@ -629,11 +645,11 @@ works.onclick = function (e) {
         
             worksDescription.innerHTML = 
             `<div>
-                ■All Your Wishes Come True is a zine project composed of two booklets, a collection of posters, and motion graphics derived from the physical outputs. Centered around the theme of "wishes," the project explores the methodology of wish fulfillment, meanwhile, demonstrates human desire to make wishes come true across time, cultures, and methodologies. 
+                ■All Your Wishes Come True is a zine project composed of two booklets, a collection of tabloids, and motion graphics derived from the physical outputs. Centered around the theme of "wishes," the project explores the methodology of wish fulfillment, meanwhile, demonstrates human desire to make wishes come true across time, cultures, and methodologies. 
                 <br><br>
                 ■The two booklets delve into the methodologies of wish fulfillment, drawing connections between Freud's Interpretation of Dreams, the myth of Pygmalion, the phenomenon of chain letters spread through the internet, and witches' spells. These narratives reveal humanity's timeless fascination with manifesting desires into reality.
                 <br><br>
-                ■The poster collection highlights renowned locations worldwide that are believed to grant wishes, accompanied by their corresponding folklore or stories. By weaving together these diverse narratives, the zine serves as a curated anthology, inviting readers to immerse themselves in the magic of wish-making.
+                ■The tabloid collection highlights renowned locations worldwide that are believed to grant wishes, accompanied by their corresponding folklore or stories. By weaving together these diverse narratives, the zine serves as a curated anthology, inviting readers to immerse themselves in the magic of wish-making.
                 <br><br>
                 ■Designed with both visual and narrative appeal, All Your Wishes Come True is intentionally crafted as a bedtime storybook for all kinds of people—evoking a sense of wonder and introspection.
             </div>`;
