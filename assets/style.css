@@ -1,3 +1,4 @@
+
 body{
     background-color: black;
     overflow: hidden;
@@ -587,4 +588,12 @@ button{
     width: 1px;
     height: 0%;
     left: 50%;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    html{
+        font-size: 30px;
+    }
   }
