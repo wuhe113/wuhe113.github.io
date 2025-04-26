@@ -614,7 +614,7 @@ button{
 
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
 
     /* html{
         font-size: 30px;
@@ -646,12 +646,157 @@ button{
         font-size: 25px;
     }
 
+    #enlargeButton{
+        font-size: 25px;
+    }
+
     #loader{
         font-size: 25px;
     }
 
+}
+
+
+@media only screen and (min-width: 600px) {
+    #introduction{
+        padding: 25px;
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    #contact{
+        font-size: 25px;
+        left: 20px;
+        bottom: 10px;
+    }
+
+    #work{
+        font-size: 25px;
+    }
+
+    #description{
+        padding: 25px;
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    #fs{
+        font-size: 25px;
+    }
+
+    #enlargeButton{
+        font-size: 25px;
+    }
+
+    #loader{
+        font-size: 25px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    #introduction{
+        padding: 20px;
+        font-size: 19px;
+        line-height: 23px;
+    }
+
+    #contact{
+        font-size: 19px;
+    }
+
+    #work{
+        font-size: 19px;
+    }
+
+    #description{
+        padding: 20px;
+        font-size: 19px;
+        line-height: 23px;
+    }
+
+    #fs{
+        font-size: 19px;
+    }
+
+    #enlargeButton{
+        font-size: 19px;
+    }
+
+    #loader{
+        font-size: 19px;
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+    #introduction{
+        padding: 20px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    #contact{
+        font-size: 20px;
+    }
+
+    #work{
+        font-size: 20px;
+    }
+
+    #description{
+        padding: 20px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    #fs{
+        font-size: 20px;
+    }
+
+    #enlargeButton{
+        font-size: 20px;
+    }
+
+    #loader{
+        font-size: 20px;
+    }
+}
 
 
 
 
+
+@media only screen and (min-width: 1200px) {
+    #introduction{
+        padding: 20px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    #contact{
+        font-size: 16px;
+    }
+
+    #work{
+        font-size: 16px;
+    }
+
+    #description{
+        padding: 20px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    #fs{
+        font-size: 16px;
+    }
+
+    #enlargeButton{
+        font-size: 16px;
+    }
+
+    #loader{
+        font-size: 16px;
+    }
 }
