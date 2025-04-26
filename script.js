@@ -781,3 +781,44 @@ function startTime() {
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
+
+
+
+
+// let quantity = 1200;
+// let max = 4;
+// let min = 1;
+
+// let stars = document.getElementById("stars");
+
+
+// function createStars(){
+  
+//   for (let i=0;i<quantity;i++){
+//   let randomSize = makeRandomSize(min, max);
+//   let starDiv = document.createElement("div");
+  
+//   starDiv.classList.add("star");
+//   starDiv.style.width = randomSize + "px";
+//   starDiv.style.height = randomSize + "px";
+//   starDiv.style.left = Math.random()*100 + "vw";
+//   starDiv.style.top = Math.random()*100 + "vh";
+
+
+//   let randomDelay = Math.random() * 5;
+//   starDiv.style.animationDelay = `${randomDelay}s`;
+
+
+//   stars.appendChild(starDiv);
+
+
+
+// }
+// }
+
+// createStars();
+
+
+// function makeRandomSize(minSize, maxSize){
+//   return minSize + Math.random()*(maxSize-minSize);
+// }
