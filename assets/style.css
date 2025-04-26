@@ -621,7 +621,7 @@ button{
     } */
 
     #introduction{
-        padding: 25px;
+        padding: 20px;
         font-size: 25px;
         line-height: 30px;
     }
@@ -637,7 +637,7 @@ button{
     }
 
     #description{
-        padding: 25px;
+        padding: 20px;
         font-size: 25px;
         line-height: 30px;
     }
@@ -659,7 +659,7 @@ button{
 
 @media only screen and (min-width: 600px) {
     #introduction{
-        padding: 25px;
+        padding: 20px;
         font-size: 25px;
         line-height: 30px;
     }
@@ -675,7 +675,7 @@ button{
     }
 
     #description{
-        padding: 25px;
+        padding: 20px;
         font-size: 25px;
         line-height: 30px;
     }
