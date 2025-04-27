@@ -479,6 +479,7 @@ a{
 
 .controls{
     font-family: "Arial";
+    font-variant-emoji: normal;
     /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
     font-weight: 300;
     color: rgb(0,116,255);
