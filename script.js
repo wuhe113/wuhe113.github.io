@@ -710,12 +710,12 @@ works.onclick = function (e) {
         if (next && prev) {
         
             next.onclick = () => {
-                currentIndex = (currentIndex - 1) % mediaData.sources.length;
+                currentIndex = (currentIndex + 1 + mediaData.sources.length) % mediaData.sources.length;
                 loadMedia(currentIndex);
             };
     
             prev.onclick = () => {
-                currentIndex = (currentIndex + 1 + mediaData.sources.length) % mediaData.sources.length;
+                currentIndex = (currentIndex - 1) % mediaData.sources.length;
                 loadMedia(currentIndex);
             };
         }

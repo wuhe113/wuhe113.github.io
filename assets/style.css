@@ -543,7 +543,7 @@ button{
 
 }
 
-#nextButton{
+#prevButton{
     position: absolute;
     display: none;
     left: 20px;
@@ -554,7 +554,7 @@ button{
     
 }
 
-#prevButton{
+#nextButton{
     position: absolute;
     display: none;
     right: 20px;
