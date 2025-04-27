@@ -234,9 +234,22 @@ body{
 
 } */
 
+/* #spotify-player{
+    display: flex;
+} */
+
 #spotify-player{
     display: flex;
 }
+
+
+/* #spotify-player iframe{
+    width: 80%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+} */
+
 
 a{
     cursor: none;
@@ -620,189 +633,62 @@ button{
 
 
 
-@media only screen and (max-width: 600px) {
-
-    /* html{
-        font-size: 30px;
-    } */
-
-    #introduction{
-        padding: 20px;
-        font-size: 25px;
-        line-height: 30px;
+@media only screen and (max-width: 599px) {
+    #introduction, #description {
+        padding: 10px;
+        font-size: 12px;
+        line-height: 15px;
     }
-
-    #contact{
-        font-size: 25px;
-        left: 20px;
-        bottom: 10px;
-    }
-
-    #work{
-        font-size: 25px;
-    }
-
-    #description{
-        padding: 20px;
-        font-size: 25px;
-        line-height: 30px;
-    }
-
-    #fs{
-        font-size: 25px;
-    }
-
-    #enlargeButton{
-        font-size: 25px;
-    }
-
-    #loader{
-        font-size: 25px;
+    #contact, #work, #fs, #enlargeButton, #loader {
+        font-size: 12px;
     }
 
 }
 
 
-@media only screen and (min-width: 600px) {
-    #introduction{
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    #introduction, #description {
         padding: 20px;
-        font-size: 25px;
-        line-height: 30px;
+        font-size: 15px;
+        line-height: 18px;
     }
-
-    #contact{
-        font-size: 25px;
-        left: 20px;
-        bottom: 10px;
-    }
-
-    #work{
-        font-size: 25px;
-    }
-
-    #description{
-        padding: 20px;
-        font-size: 25px;
-        line-height: 30px;
-    }
-
-    #fs{
-        font-size: 25px;
-    }
-
-    #enlargeButton{
-        font-size: 25px;
-    }
-
-    #loader{
-        font-size: 25px;
+    #contact, #work, #fs, #enlargeButton, #loader {
+        font-size: 15px;
     }
 }
 
 
-@media only screen and (min-width: 768px) {
-    #introduction{
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    #introduction, #description {
         padding: 20px;
-        font-size: 19px;
-        line-height: 23px;
+        font-size: 17px;
+        line-height: 20px;
     }
-
-    #contact{
-        font-size: 19px;
-    }
-
-    #work{
-        font-size: 19px;
-    }
-
-    #description{
-        padding: 20px;
-        font-size: 19px;
-        line-height: 23px;
-    }
-
-    #fs{
-        font-size: 19px;
-    }
-
-    #enlargeButton{
-        font-size: 19px;
-    }
-
-    #loader{
-        font-size: 19px;
+    #contact, #work, #fs, #enlargeButton, #loader {
+        font-size: 17px;
     }
 }
 
 
-@media only screen and (min-width: 992px) {
-    #introduction{
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    #introduction, #description {
         padding: 20px;
         font-size: 18px;
         line-height: 21px;
     }
-
-    #contact{
-        font-size: 18px;
-    }
-
-    #work{
-        font-size: 18px;
-    }
-
-    #description{
-        padding: 20px;
-        font-size: 18px;
-        line-height: 21px;
-    }
-
-    #fs{
-        font-size: 18px;
-    }
-
-    #enlargeButton{
-        font-size: 18px;
-    }
-
-    #loader{
+    #contact, #work, #fs, #enlargeButton, #loader {
         font-size: 18px;
     }
 }
-
-
-
 
 
 @media only screen and (min-width: 1200px) {
-    #introduction{
+    #introduction, #description {
         padding: 20px;
         font-size: 16px;
         line-height: 20px;
     }
-
-    #contact{
-        font-size: 16px;
-    }
-
-    #work{
-        font-size: 16px;
-    }
-
-    #description{
-        padding: 20px;
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    #fs{
-        font-size: 16px;
-    }
-
-    #enlargeButton{
-        font-size: 16px;
-    }
-
-    #loader{
+    #contact, #work, #fs, #enlargeButton, #loader {
         font-size: 16px;
     }
 }
