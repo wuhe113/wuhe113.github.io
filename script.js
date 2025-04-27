@@ -214,6 +214,32 @@ works.onclick = function (e) {
 
         // worksDescription.innerHTML = '';
 
+        if (content === 'snow-writing') {
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Snow Writing/Snow Writing.mp4"}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+            // if (video) {
+            //     video.innerHTML = '';
+            //     video.style.display = 'none';
+            // }
+
+
+            // if(image){
+            //     image.style.display = 'none';
+            // }
+
+            worksDescription.innerHTML = 
+            `<div>
+            <div id="visit"><a href="https://editor.p5js.org/wuhe113/sketches/hwKzcb4Lc">■Link to p5.js coding page↗︎</a></div>
+        </div>`;
+        }
+
         if (content === 'the-wishlist') {
             mediaData = {
                 type: "video",
