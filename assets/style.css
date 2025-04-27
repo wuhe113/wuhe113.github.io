@@ -478,8 +478,6 @@ a{
 }
 
 .controls{
-    font-family: "Arial";
-    font-variant-emoji: normal;
     /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
     font-weight: 300;
     color: rgb(0,116,255);
@@ -498,6 +496,8 @@ a{
     left: 20px;
     bottom: 10px;
     font-size: 25px;
+    font-family: "Arial";
+    font-variant-emoji: normal;
 
 }
 
@@ -651,7 +651,7 @@ button{
         font-size: 12px;
         line-height: 15px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader {
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
         font-size: 12px;
     }
 
@@ -666,7 +666,7 @@ button{
         font-size: 15px;
         line-height: 18px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader {
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
         font-size: 15px;
     }
 }
@@ -678,7 +678,7 @@ button{
         font-size: 17px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader {
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
         font-size: 17px;
     }
 }
@@ -690,7 +690,7 @@ button{
         font-size: 18px;
         line-height: 21px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader {
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
         font-size: 18px;
     }
 }
@@ -702,7 +702,7 @@ button{
         font-size: 16px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader {
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
         font-size: 16px;
     }
 }
