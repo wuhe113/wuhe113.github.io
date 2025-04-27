@@ -478,7 +478,8 @@ a{
 }
 
 .controls{
-    font-family: sans-serif;
+    font-family: "Arial";
+    /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
     font-weight: 300;
     color: rgb(0,116,255);
 }
@@ -549,6 +550,7 @@ button{
     bottom: 10px;
     font-size: 25px;
     color: rgb(0,116,255);
+    font-family: "Arial";
     
 }
 
@@ -559,6 +561,7 @@ button{
     bottom: 10px;
     font-size: 25px;
     color: rgb(0,116,255);
+    font-family: "Arial";
     
 }
 
@@ -648,6 +651,8 @@ button{
     #contact, #work, #fs, #enlargeButton, #loader {
         font-size: 12px;
     }
+
+    
 
 }
 
