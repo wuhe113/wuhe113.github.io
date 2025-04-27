@@ -478,6 +478,7 @@ a{
 }
 
 .controls{
+    font-family: sans-serif;
     /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
     font-weight: 300;
     color: rgb(0,116,255);
@@ -651,7 +652,7 @@ button{
         font-size: 12px;
         line-height: 15px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
         font-size: 12px;
     }
 
@@ -670,7 +671,7 @@ button{
         font-size: 15px;
         line-height: 18px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
         font-size: 15px;
     }
 
@@ -686,7 +687,7 @@ button{
         font-size: 17px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
         font-size: 17px;
     }
 }
@@ -698,7 +699,7 @@ button{
         font-size: 18px;
         line-height: 21px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
         font-size: 18px;
     }
 }
@@ -710,7 +711,7 @@ button{
         font-size: 16px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause{
+    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
         font-size: 16px;
     }
 }
