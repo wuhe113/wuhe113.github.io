@@ -551,6 +551,7 @@ button{
     font-size: 25px;
     color: rgb(0,116,255);
     font-family: "Arial";
+    font-variant-emoji: normal;
     
 }
 
@@ -562,6 +563,7 @@ button{
     font-size: 25px;
     color: rgb(0,116,255);
     font-family: "Arial";
+    font-variant-emoji: normal;
     
 }
 
