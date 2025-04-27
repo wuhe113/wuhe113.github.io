@@ -242,6 +242,12 @@ body{
     display: flex;
 }
 
+/* iframe{
+
+    transform-origin: left;
+    transform: scale(0.8);
+} */
+
 
 /* #spotify-player iframe{
     width: 80%;
@@ -648,7 +654,7 @@ button{
 
 @media only screen and (min-width: 600px) and (max-width: 767px) {
     #introduction, #description {
-        padding: 20px;
+        padding: 15px;
         font-size: 15px;
         line-height: 18px;
     }
