@@ -7,6 +7,14 @@ body{
     cursor: none;
 }
 
+/* .daytime{
+    background-color: white;
+}
+
+.nighttime{
+    background-color: black;
+} */
+
 #cursor{
     position: fixed;
     width: 11.5px;

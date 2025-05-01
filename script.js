@@ -792,7 +792,21 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('txt').innerHTML = "■" + h + ":" + m + ":" + s +  "&nbsp" + day +  "&nbsp" + mon + "&nbsp" + date + "&nbsp" + year;
+    
     setTimeout(startTime, 1000);
+
+
+    // if (h >= 6 && h < 18){
+    //     document.body.classList.add('daytime');
+    //     document.body.classList.remove('nighttime');
+    // } else {
+    //     document.body.classList.add('nighttime');
+    //     document.body.classList.remove('daytime');
+    // }
+
+
+    // setInterval(startTime, 1000);
+
   }
   
   function checkTime(i) {
