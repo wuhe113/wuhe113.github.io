@@ -214,6 +214,23 @@ works.onclick = function (e) {
 
         // worksDescription.innerHTML = '';
 
+        if (content === 'pixel-cam-viewer-ver1') {
+            mediaData = {
+                type: "video",
+                sources: [
+                    { type: "video", src: "assets/videos/Pixel Cam Viewer Ver1/Pixel Cam Viewer Ver1.mp4"}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+
+            worksDescription.innerHTML = 
+            `<div>
+            <div id="visit"><a href="https://editor.p5js.org/wuhe113/sketches/VNe12yphu">■Link to p5.js coding page↗︎</a></div>
+        </div>`;
+        }
+
         if (content === 'snow-writing') {
             mediaData = {
                 type: "video",

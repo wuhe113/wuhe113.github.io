@@ -354,6 +354,12 @@ a{
     background-color: rgb(0,116,255);
 } */
 
+#pixel-cam-viewer-ver1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
 #snow-writing{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -660,7 +666,7 @@ button{
         font-size: 12px;
         line-height: 15px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
+    #contact, #work, #loader, #fs, #enlargeButton{
         font-size: 12px;
     }
 
@@ -679,7 +685,7 @@ button{
         font-size: 15px;
         line-height: 18px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
+    #contact, #work, #fs, #enlargeButton, #loader{
         font-size: 15px;
     }
 
@@ -695,7 +701,7 @@ button{
         font-size: 17px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
+    #contact, #work, #fs, #enlargeButton, #loader{
         font-size: 17px;
     }
 }
@@ -707,7 +713,7 @@ button{
         font-size: 18px;
         line-height: 21px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
+    #contact, #work, #fs, #enlargeButton, #loader{
         font-size: 18px;
     }
 }
@@ -719,7 +725,7 @@ button{
         font-size: 16px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader, #play-pause, #prevButton, #nextButton{
+    #contact, #work, #fs, #enlargeButton, #loader{
         font-size: 16px;
     }
 }
