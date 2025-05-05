@@ -51,6 +51,7 @@ let typingInterval;
 const next = document.getElementById("nextButton");
 const prev = document.getElementById("prevButton");
 const enlarge = document.getElementById("enlargeButton");
+const swipe = document.getElementById("images-swipe");
 
 const startTypingAnimation = () => {
     typingInterval = setInterval(() => {
@@ -119,8 +120,13 @@ document.onclick = function (e) {
 
 const updateButtonVisibility = () => {
     const isImageVisible = image.style.display !== "none";
-    prev.style.display = isImageVisible ? "block" : "none";
-    next.style.display = isImageVisible ? "block" : "none";
+
+    const isMobile = window.innerWidth <= 599;
+
+    prev.style.display = (isImageVisible && !isMobile) ? "block" : "none";
+    next.style.display = (isImageVisible && !isMobile) ? "block" : "none";
+
+    swipe.style.display = (isImageVisible && isMobile) ? "block" : "none";
     enlarge.style.display = isImageVisible ? "block" : "none";
 };
 
@@ -737,6 +743,38 @@ works.onclick = function (e) {
             };
         }
 
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+
+        const swipeArea = document.getElementById("images-videos");
+
+        if (swipeArea) {
+            swipeArea.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        swipeArea.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        });
+        
+        function handleSwipeGesture() {
+        const swipeThreshold = 50; // Minimum distance to be considered a swipe
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (swipeDistance > swipeThreshold) {
+            // Swiped right (previous)
+            currentIndex = (currentIndex - 1 + mediaData.sources.length) % mediaData.sources.length;
+            loadMedia(currentIndex);
+        } else if (swipeDistance < -swipeThreshold) {
+            // Swiped left (next)
+            currentIndex = (currentIndex + 1) % mediaData.sources.length;
+            loadMedia(currentIndex);
+        }
+    }
+}
+
     }
 };
 
@@ -840,6 +878,8 @@ function map(value, low1, high1, low2, high2) {
 }
 
 
+// window.addEventListener("resize", updateButtonVisibility);
+// window.addEventListener("load", updateButtonVisibility);
 
 
 // let quantity = 1200;

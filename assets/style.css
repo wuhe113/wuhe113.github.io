@@ -503,9 +503,9 @@ a{
     display: none;
   }
   
-  .controls[data-state="visible"] {
+.controls[data-state="visible"] {
     display: block;
-  }
+}
 
 #play-pause{
     position: absolute;
@@ -607,6 +607,18 @@ button{
     color: rgb(0,116,255);
 }
 
+#images-swipe{
+    position: absolute;
+    display: none;
+    bottom: 10px;
+    color: rgb(0,116,255);
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    left: 20px;
+
+}
+
 #opening-loader {
     position: relative;
     width: 100%;
@@ -667,13 +679,14 @@ button{
         font-size: 12px;
         line-height: 15px;
     }
-    #contact, #work, #loader, #fs, #enlargeButton{
+    #contact, #work, #loader, #fs, #enlargeButton, #images-swipe{
         font-size: 12px;
     }
 
     #contact{
         left: 10px;
     }
+
 
     
 
@@ -686,7 +699,7 @@ button{
         font-size: 15px;
         line-height: 18px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader{
+    #contact, #work, #fs, #enlargeButton, #loader, #images-swipe{
         font-size: 15px;
     }
 
@@ -702,7 +715,7 @@ button{
         font-size: 17px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader{
+    #contact, #work, #fs, #enlargeButton, #loader, #images-swipe{
         font-size: 17px;
     }
 }
@@ -714,7 +727,7 @@ button{
         font-size: 18px;
         line-height: 21px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader{
+    #contact, #work, #fs, #enlargeButton, #loader, #images-swipe{
         font-size: 18px;
     }
 }
@@ -726,7 +739,7 @@ button{
         font-size: 16px;
         line-height: 20px;
     }
-    #contact, #work, #fs, #enlargeButton, #loader{
+    #contact, #work, #fs, #enlargeButton, #loader, #images-swipe{
         font-size: 16px;
     }
 }
