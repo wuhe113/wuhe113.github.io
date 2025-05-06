@@ -694,6 +694,10 @@ button{
         left: 10px;
     }
 
+    #cursor{
+        display: none;
+    }
+
 
     
 
