@@ -169,6 +169,12 @@ works.onclick = function (e) {
             loader.style.display = "block";
             startTypingAnimation();
 
+            image.style.display = "none";
+            video.style.display = "none";
+            image.removeAttribute("src");
+            video.pause();
+            video.innerHTML = "";
+
             if (type === 'image') {
                 video.style.display = "none";
                 image.setAttribute('src', src);
@@ -219,6 +225,34 @@ works.onclick = function (e) {
 
 
         // worksDescription.innerHTML = '';
+
+        if (content === 'DFYA') {
+            mediaData = {
+                type: "image",
+                sources: [
+                    { type: "image", src: "assets/images/DF, YA/DFYA1.gif"},
+                    { type: "image", src: "assets/images/DF, YA/DFYA2.gif"},
+                    { type: "image", src: "assets/images/DF, YA/DFYA3.gif"},
+                    { type: "image", src: "assets/images/DF, YA/DFYA4.gif"},
+                    { type: "image", src: "assets/images/DF, YA/DFYA5.gif"},
+                    { type: "image", src: "assets/images/DF, YA/DFYA6.jpg"},
+                    { type: "image", src: "assets/images/DF, YA/DFYA7.jpg"}
+                ],
+            };
+
+            loadMedia(currentIndex);
+
+
+            worksDescription.innerHTML = 
+            `<div>
+            ■Dear Fictional, Your Affection (DF, YA) is an experimental interactive web project that delves into the phenomenon of parasocial relationships with fictional characters. DF, YA investigates the one-sided psychological relationships that audiences develop with fictional characters through various forms of new media, including pseudo-friendships, mentor-student bonds, and romantic attachments. The project aims to explore this phenomenon, addressing key questions such as: What are parasocial relationships? Through what mediums and how do people form these connections with fictional characters? Why do these relationships develop in the first place? 
+            <br>
+            <br>■Additionally, DF, YA examines the fan culture communities that emerge from these parasocial relationships, as well as related topics such as personality development and cultural identity. Beyond introducing this unique form of relationship to a broader audience, DF, YA encourages audiences to reflect on why they are drawn to fictional characters and how they project their emotions onto these characters to form these bonds.
+            <br>
+            <br>■The project is divided into four main sections, each representing a distinct medium: manga, video game, novel, and film. These mediums correspond to the worlds in which fictional characters originate, providing audiences with a way to more immersively explore and understand the project's content while enjoying the diverse interactive experiences offered by these virtual worlds. The goal is not only to inform but also to create an engaging and reflective experience that highlights the complexities of parasocial relationships and their impact on individuals and communities.
+            <br><div id="visit"><a href="https://www.df-ya.com">■Link to website↗︎</a></div>
+        </div>`;
+        }
 
         if (content === 'pixel-cam-viewer-ver1') {
             mediaData = {
